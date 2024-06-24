@@ -1,0 +1,14 @@
+{
+  "name": "epro",
+  "version": "1.0.0",
+  "description": "Electron Demo Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "VL",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^26.0.0"
+  }
+}

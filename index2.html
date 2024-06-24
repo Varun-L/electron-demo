@@ -1,0 +1,17 @@
+<h1 id="output">Capitalize Anything you want</h1>
+<input type="number" id="userInput">
+<input type="number" id="userInput2">
+<button onclick="clicked()">add</button>
+
+<script>
+    const electron = require('electron');
+    const {ipcRenderer} = electron;
+    function clicked(){
+        ipcRenderer.send('pleaseCap',document.getElementById('userInput').value,document.getElementById('userInput2').value)
+
+    }
+
+    ipcRenderer.on('capDone',(_,v)=>{
+        document.getElementById('output').innerText = v
+    })
+</script>

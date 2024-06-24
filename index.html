@@ -1,0 +1,15 @@
+<h1 id="personL">Glory</h1>
+<input type="text" id="person">
+<button onclick="clicked()">Click Me</button>
+
+<script>
+    const electron = require('electron');
+    const {ipcRenderer} = electron;
+    function clicked(){
+        ipcRenderer.send('clicked',document.getElementById('person').value)
+    }
+
+    ipcRenderer.on('sodi',(_,v)=>{
+        document.getElementById('personL').innerText = v
+    })
+</script>
